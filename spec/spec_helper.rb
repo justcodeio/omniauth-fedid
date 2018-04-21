@@ -4,7 +4,7 @@ require 'rspec'
 require 'rack/test'
 require 'webmock/rspec'
 require 'omniauth'
-require "omniauth/fedid"
+require "omniauth-fedid"
 
 RSpec.configure do |config|
   config.include WebMock::API

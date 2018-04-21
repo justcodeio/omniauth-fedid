@@ -1,8 +1,8 @@
 require "spec_helper"
 
-describe Omniauth::Fedid do
+describe OmniAuth::Strategies::FedidOauth do
   subject do
-    OmniAuth::Strategies::Fedid.new({})
+    OmniAuth::Strategies::FedidOauth.new({})
   end
 
   it "has a version number" do

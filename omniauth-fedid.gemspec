@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Oauth strategy for FEDID}
   spec.description   = %q{log in using FEDID via Oauth}
-  spec.homepage      = "https://github.com/justcodeio/fedid-oauth"
+  spec.homepage      = "https://github.com/justcodeio/omniauth-fedid"
   spec.license       = "MIT"
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }

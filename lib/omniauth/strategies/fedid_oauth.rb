@@ -3,7 +3,7 @@ require 'omniauth/strategies/oauth2'
 
 module OmniAuth
   module Strategies
-    class Fedid < OmniAuth::Strategies::OAuth2
+    class FedidOauth < OmniAuth::Strategies::OAuth2
       option :name, 'fedid_oauth'
       option :client_options, {
         authorize_url: '/as/authorization.oauth2',
