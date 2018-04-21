@@ -1,4 +1,4 @@
-# Omniauth::Fedid
+# OmniAuth::Strategies::FedidOauth
 
 This gem contains the FEDID strategy for OmniAuth.
 
@@ -14,12 +14,12 @@ Once these are in, you need to add the following to your `config/initializers/om
     Rails.application.config.middleware.use OmniAuth::Builder do
       provider :fedid_oauth, 'client_id', 'secret', scope: 'scopes', client_options: { site: 'site' }
     end
-OR 
+OR
 
 Inside Devise (optional if using devise gem)
 `config/initializers/devise.rb`:
 
-    config.omniauth 
+    config.omniauth
       :fedid_oauth,
         'client_id',
         'secret',
@@ -29,7 +29,7 @@ Inside Devise (optional if using devise gem)
         }
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/fedid-oauth. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/justcodeio/omniauth-fedid. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
