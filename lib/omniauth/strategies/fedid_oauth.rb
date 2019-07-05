@@ -13,8 +13,9 @@ module OmniAuth
       option :headers, 'Accept-Encoding': 'none'
 
       def build_access_token
-        options.token_params.merge!(:headers => {'Accept-Encoding'=>'none'})
-        super
+        redirect_uri = full_host + script_name + callback_path
+        verifier = request.params["code"]
+        client.auth_code.get_token(verifier, {:redirect_uri => redirect_uri}.merge(token_params.to_hash(:symbolize_keys => true)), deep_symbolize(options.auth_token_params))
       end
 
       uid { raw_info['uid'] }
