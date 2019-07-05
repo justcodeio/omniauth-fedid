@@ -9,10 +9,8 @@ module OmniAuth
         authorize_url: '/as/authorization.oauth2',
         token_url: '/as/token.oauth2'
       }
-
-      def callback_url
-        full_host + script_name + callback_path
-      end
+      option :token_options, %i[headers]
+      option :headers, 'Accept-Encoding': 'none'
 
       def build_access_token
         options.token_params.merge!(:headers => {'Accept-Encoding'=>'none'})
@@ -41,7 +39,7 @@ module OmniAuth
       end
 
       def raw_info
-        @raw_info ||= access_token.post('/idp/userinfo.openid', headers: {'Accept-Encoding'=>'none'}).parsed
+        @raw_info ||= access_token.post('/idp/userinfo.openid', headers: {'Accept-Encoding': 'none'}).parsed
       end
     end
   end
