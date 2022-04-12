@@ -12,7 +12,7 @@ If you are using rails, you need to add the gem to your `Gemfile`:
 Once these are in, you need to add the following to your `config/initializers/omniauth.rb`:
 
     Rails.application.config.middleware.use OmniAuth::Builder do
-      provider :fedid_oauth, 'client_id', 'secret', scope: 'scopes', client_options: { site: 'site' }
+      provider :fedid_oauth, 'client_id', 'secret', scope: 'scopes', client_options: { site: 'site' }, pkce: true, pkce_verifier: 'example'
     end
 OR
 
@@ -26,7 +26,9 @@ Inside Devise (optional if using devise gem)
         scope: 'scope',
         client_options: {
           site: 'site'
-        }
+        },
+        pkce: true,
+        pkce_verifier: 'example'
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/justcodeio/omniauth-fedid. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
