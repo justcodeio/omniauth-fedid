@@ -17,11 +17,11 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.13"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "bundler", "~> 2.3.11"
+  spec.add_development_dependency "rake", "~> 13.0.6"
+  spec.add_development_dependency "rspec", "~> 3.11"
   spec.add_development_dependency 'rack-test'
   spec.add_development_dependency 'webmock'
-  spec.add_runtime_dependency 'omniauth', '>= 1.1.1'
-  spec.add_runtime_dependency 'omniauth-oauth2', '~> 1.2'
+  spec.add_runtime_dependency 'omniauth', '>= 2.0.4'
+  spec.add_runtime_dependency 'omniauth-oauth2', '~> 1.7.2'
 end

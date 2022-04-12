@@ -11,6 +11,17 @@ module OmniAuth
       }
       option :token_options, %i[headers]
       option :headers, 'Accept-Encoding': 'none'
+      option :pkce, false
+      option :pkce_verifier, nil
+      option :pkce_options, {
+        :code_challenge => proc { |verifier|
+          Base64.urlsafe_encode64(
+            Digest::SHA2.digest(verifier),
+            :padding => false,
+          )
+        },
+        :code_challenge_method => "S256",
+      }
 
       def build_access_token
         redirect_uri = full_host + script_name + callback_path
@@ -29,7 +40,8 @@ module OmniAuth
           :country => raw_info['c'],
           :site => raw_info['site'],
           :site_name => raw_info['sitename'],
-          :osmose_login => raw_info['uid']
+          :osmose_login => raw_info['uid'],
+          :user_login => raw_info['uid']
         }
       end
 
